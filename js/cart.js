@@ -73,12 +73,12 @@ $(function () {
                                         <td class="column-3">$ ${item[2]}</td>
                                         <td class="column-4">
                                             <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                                <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-minus reduce" data-id="${item[3]}"></i>
+                                                <div>
+                                                    <i class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m fs-16 zmdi zmdi-minus reduce" data-id="${item[3]}"></i>
                                                 </div>
                                                 <input class="mtext-104 cl3 txt-center num-product" type="number" readonly name="num-product1" value="${item[4]}">
-                                                <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-plus addUp" data-id="${item[3]}"></i>
+                                                <div>
+                                                    <i class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m fs-16 zmdi zmdi-plus addUp" data-id="${item[3]}"></i>
                                                 </div>
                                             </div>
                                         </td>
@@ -145,12 +145,12 @@ $(function () {
                                         <td class="column-3">$ ${item[2]}</td>
                                         <td class="column-4">
                                             <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                                <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-minus reduce" data-id="${item[3]}></i>
+                                                <div>
+                                                    <i class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m fs-16 zmdi zmdi-minus reduce" data-id="${item[3]}></i>
                                                 </div>
                                                 <input class="mtext-104 cl3 txt-center num-product" type="number" readonly name="num-product1" value="${item[4]}">
-                                                <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-plus addUp" data-id="${item[3]}"></i>
+                                                <div>
+                                                    <i class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m fs-16 zmdi zmdi-plus addUp" data-id="${item[3]}"></i>
                                                 </div>
                                             </div>
                                         </td>
@@ -240,12 +240,10 @@ $(function () {
                 var itemsTotals = index + 1;
                 let result = $('.cart-items').text(itemsTotals);
                 $('.cartItem').attr('data-notify', itemsTotals); //setter
-                // let productLen = $('.cart-items').text(itemsTotals);
                 // console.log(itemsTotals);
             });
 
         }
-        //  storage.saveCart(customerItemArr);
         window.localStorage.setItem('product', JSON.stringify(customerItemArr));
         populateCart2();
 
@@ -263,14 +261,6 @@ $(function () {
         showCart();
     });
 
-
-
-    // $('#closeModal').on('click', function (e) {
-    //     e.preventDefault();
-    //     console.log('i see u now');
-    //     $('.modalShadow').modal('close');
-
-    // });
 
     $('#clearCart').click(function () {
         $('.wrapper-table-shopping-cart').html('');
@@ -317,11 +307,7 @@ $(function () {
         $('.addUp').on('click', function (e) {
             e.preventDefault();
             console.log(e);
-            alert('tony');
-            // let quantity = e.target;
-            // console.log(quantity);
-            // let id = quantity.dataset.id;
-            // console.log(id);
+        
             let productId = $(this).attr('data-id');
             // console.log(productId);
             let tempItem = customerItemArr.find(item => item[3] === productId);
@@ -342,10 +328,7 @@ $(function () {
         $('.reduce').on('click', function (e) {
             e.preventDefault();
             console.log(e);
-            // let quantity = e.target;
-            // console.log(quantity);
-            // let id = quantity.dataset.id;
-            // console.log(id);
+           
             let productId = $(this).attr('data-id');
             // console.log(productId);
             let tempItem = customerItemArr.find(item => item[3] === productId);
